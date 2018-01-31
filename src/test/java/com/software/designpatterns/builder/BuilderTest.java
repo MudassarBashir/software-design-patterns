@@ -29,7 +29,7 @@ public class BuilderTest {
     }
 
     /**
-     * A GA builder.giti and director combination should create a GA aircraft.
+     * A GA builder and director combination should create a GA aircraft.
      */
     @Test
     public void gaBuilderAndDirectorShouldProduceGaAircraft() {
