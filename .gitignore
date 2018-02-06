@@ -5,6 +5,7 @@
 .gradle
 /build/
 
-# Ignore Intellij IDEA configs
+# Ignore Intellij IDEA configs and build output
 .idea/
 *.iml
+out

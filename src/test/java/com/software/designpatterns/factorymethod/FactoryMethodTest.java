@@ -45,4 +45,24 @@ public class FactoryMethodTest {
         assert(aircraft instanceof Cargo);
         assert(aircraft.getLivery().equals(Aircraft.Livery.PACIFIC_AIRWAYS));
     }
+
+    /**
+     * If we want a single purpose aircraft in the Atlantic livery. Static method test.
+     */
+    @Test
+    public void staticMethodTest_singlePurposeAtlanticLiveryAircraftCreationTest() {
+        Aircraft aircraft = AircraftFactory.make(AircraftFactory.Category.GA, AircraftFactory.FlyingStyle.SINGLE_PURPOSE, Aircraft.Livery.AIR_ATLANTIC);
+        assert(aircraft instanceof Trainer);
+        assert(aircraft.getLivery().equals(Aircraft.Livery.AIR_ATLANTIC));
+    }
+
+    /**
+     * If we want a single purpose aircraft in the Atlantic livery. Static method test.
+     */
+    @Test
+    public void staticMethodTest_multiPurposeHeavyPacificLiveryAircraftCreationTest() {
+        Aircraft aircraft = AircraftFactory.make(AircraftFactory.Category.HEAVY, AircraftFactory.FlyingStyle.CUSTOM_PURPOSE, Aircraft.Livery.PACIFIC_AIRWAYS);
+        assert(aircraft instanceof Cargo);
+        assert(aircraft.getLivery().equals(Aircraft.Livery.PACIFIC_AIRWAYS));
+    }
 }
