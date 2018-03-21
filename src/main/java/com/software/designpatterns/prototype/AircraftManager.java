@@ -3,6 +3,9 @@ package com.software.designpatterns.prototype;
 import com.software.designpatterns.base.iface.Aircraft;
 import com.software.designpatterns.base.impl.*;
 
+/**
+ * The manager provides objects as they are needed.
+ */
 public class AircraftManager {
 
     private static final int NUM_WHEELS_SMALL_AIRCRAFT = 3;

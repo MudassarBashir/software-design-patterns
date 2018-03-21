@@ -23,7 +23,27 @@ public class PrototypeTest {
      */
     @Test
     public void aircraftManagerShouldBeAbleToCloneObjects() {
+        log.info("Testing AircraftManager.");
         AircraftManager manager = new AircraftManager();
+        Aircraft single = manager.createSingle();
+        assert(single != null && single instanceof Single);
+        Aircraft twin = manager.createTwin();
+        assert(twin != null && twin instanceof Twin);
+        Aircraft trainer = manager.createTrainer();
+        assert(trainer != null && trainer instanceof Trainer);
+        Aircraft passenger = manager.createPassenger();
+        assert(passenger != null && passenger instanceof Passenger);
+        Aircraft cargo = manager.createCargo();
+        assert(cargo != null && cargo instanceof Cargo);
+    }
+
+    /**
+     * Lazy manager should return correct objects.
+     */
+    @Test
+    public void aircraftManagerLazyShouldBeAbleToCloneObjects() {
+        log.info("Testing AircraftManagerLazy.");
+        AircraftManagerLazy manager = new AircraftManagerLazy();
         Aircraft single = manager.createSingle();
         assert(single != null && single instanceof Single);
         Aircraft twin = manager.createTwin();
