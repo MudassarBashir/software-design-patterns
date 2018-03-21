@@ -5,7 +5,7 @@ package com.software.designpatterns.base.iface;
  *
  * @author Mudassar "Moe" Bashir
  */
-public interface Aircraft {
+public interface Aircraft extends Cloneable {
 
     /**
      * Paint scheme.
@@ -24,5 +24,7 @@ public interface Aircraft {
      * @param livery the livery or paint scheme to paint the aircraft with
      */
     void color(Aircraft.Livery livery);
+
+    Object clone();
 
 }

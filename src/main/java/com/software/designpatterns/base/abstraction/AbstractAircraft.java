@@ -2,12 +2,14 @@ package com.software.designpatterns.base.abstraction;
 
 import com.software.designpatterns.base.iface.Aircraft;
 import com.software.designpatterns.base.iface.LandingGear;
+import lombok.extern.slf4j.Slf4j;
 
 /**
  * Represents the abstract concept of an Aircraft.
  *
  * @author Mudassar "Moe" Bashir
  */
+@Slf4j
 public abstract class AbstractAircraft implements Aircraft {
 
     private LandingGear landingGear;
@@ -48,5 +50,17 @@ public abstract class AbstractAircraft implements Aircraft {
     @Override public String toString() {
         return getClass().getSimpleName() +
                 " (" + landingGear + ", " + livery + ")";
+    }
+
+    @Override
+    public Object clone() {
+        Object obj = null;
+        try {
+            obj = super.clone();
+        }
+        catch (CloneNotSupportedException e) {
+            log.info("Exception while cloning.");
+        }
+        return obj;
     }
 }
