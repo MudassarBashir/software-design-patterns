@@ -1,5 +1,7 @@
 package com.software.designpatterns.singleton;
 
+import com.software.designpatterns.PrintFormatter;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 import static org.junit.Assert.*;
@@ -9,6 +11,10 @@ import static org.junit.Assert.*;
  */
 public class SerialNumberGeneratorTraditionalTest {
 
+    @BeforeClass
+    public static void printTestType() {
+        PrintFormatter.printTitle("Singleton Traditional");
+    }
     /**
      * We should always get the same instance when we call getInstance().
      */
@@ -19,7 +25,8 @@ public class SerialNumberGeneratorTraditionalTest {
     }
 
     /**
-     * Every serial number we retrieve must be the last one incremented by a unit.
+     * Every serial number we retrieve must be equal to the last one generated,
+     * incremented by a unit.
      */
     @Test
     public void serialNumbersShouldBeInSequence() {
