@@ -2,7 +2,7 @@ package com.software.designpatterns.singleton;
 
 /**
  * A singleton to generate unique serial numbers for aircraft
- * (tradition approach to using a singleton).
+ * (traditional approach to using a singleton).
  */
 public class SerialNumberGeneratorTraditional {
 
